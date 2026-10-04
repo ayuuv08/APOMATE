@@ -1,0 +1,6 @@
+{
+  "name": "APOMATE - Platform Swamedikasi & Telefarmasi Digital",
+  "description": "Platform swamedikasi cerdas dan telefarmasi interaktif untuk konsultasi obat aman bersama apoteker berlisensi dengan panduan dosis, scan kemasan obat, dan edukasi Dagusibu.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

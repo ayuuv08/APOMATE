@@ -1,0 +1,132 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Patient medical baseline profile and preferences",
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string"
+        },
+        "ageYears": {
+          "type": "number"
+        },
+        "gender": {
+          "type": "string",
+          "enum": ["L", "P"]
+        },
+        "weightKg": {
+          "type": "number"
+        },
+        "isPregnantOrLactating": {
+          "type": "boolean"
+        },
+        "allergies": {
+          "type": "array"
+        },
+        "existingConditions": {
+          "type": "array"
+        },
+        "symptoms": {
+          "type": "array"
+        },
+        "symptomDurationDays": {
+          "type": "number"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "required": ["fullName", "ageYears", "weightKg"]
+    },
+    "MedicationRecord": {
+      "title": "MedicationRecord",
+      "description": "Patient medication consumption and swamedikasi record",
+      "type": "object",
+      "properties": {
+        "medicineId": {
+          "type": "string"
+        },
+        "medicineName": {
+          "type": "string"
+        },
+        "activeIngredient": {
+          "type": "string"
+        },
+        "bpomClass": {
+          "type": "string"
+        },
+        "calculatedDose": {
+          "type": "string"
+        },
+        "frequency": {
+          "type": "string"
+        },
+        "duration": {
+          "type": "string"
+        },
+        "startedAt": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["aktif", "selesai", "dihentikan"]
+        },
+        "userId": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        }
+      },
+      "required": ["medicineName", "activeIngredient", "userId"]
+    },
+    "ConsultationMessage": {
+      "title": "ConsultationMessage",
+      "description": "Telepharmacy consultation message record",
+      "type": "object",
+      "properties": {
+        "sender": {
+          "type": "string",
+          "enum": ["user", "pharmacist", "ai_assistant"]
+        },
+        "senderName": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": ["sender", "text", "userId"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "#/entities/UserProfile"
+      },
+      "description": "User profile and medical metrics"
+    },
+    "/users/{userId}/medicationHistory/{historyId}": {
+      "schema": {
+        "$ref": "#/entities/MedicationRecord"
+      },
+      "description": "Medication records belonging to the user"
+    },
+    "/users/{userId}/consultations/{messageId}": {
+      "schema": {
+        "$ref": "#/entities/ConsultationMessage"
+      },
+      "description": "Telepharmacy consultation logs for the user"
+    }
+  }
+}

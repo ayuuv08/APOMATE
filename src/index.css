@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-turq-main: #0DBFCD;
+    --color-mint: #77DBAA;
+    --color-teal-bright: #5FD4B3;
+    --color-turq: #42CEB8;
+    --color-cyan: #1EC5C2;
+    --color-purple-main: #6E56A9;
+    --color-purple-dark: #883EA9;
+    --color-lavender: #C2A0DD;
+    --color-lavender-soft: #A99CD5;
+    --color-magenta: #B566C0;
+    --color-bluegray: #83B3C7;
+    --color-bg-soft: #E4EFE9;
+    --color-text-navy: #101D34;
+  }
+
+  body {
+    background-color: #E4EFE9;
+    color: #101D34;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+.gradient-1 {
+  background: linear-gradient(135deg, #0DBFCD 0%, #77DBAA 100%);
+}
+
+.gradient-2 {
+  background: linear-gradient(135deg, #883EA9 0%, #B566C0 100%);
+}
+
+.gradient-3 {
+  background: linear-gradient(135deg, #6E56A9 0%, #C2A0DD 100%);
+}
+
+.gradient-4 {
+  background: linear-gradient(135deg, #5FD4B3 0%, #0DBFCD 100%);
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, #0DBFCD 0%, #42CEB8 45%, #77DBAA 100%);
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #6E56A9 0%, #B566C0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-turq {
+  background: linear-gradient(135deg, #0DBFCD 0%, #77DBAA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #E4EFE9;
+}
+::-webkit-scrollbar-thumb {
+  background: #83B3C7;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0DBFCD;
+}
